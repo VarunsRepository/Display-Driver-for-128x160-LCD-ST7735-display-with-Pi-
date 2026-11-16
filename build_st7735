@@ -1,0 +1,12 @@
+#!/bin/bash
+# Builds the ST7735 demo. Run from the project root (the folder that holds
+# ST7735/ and GPIOManager/).
+set -e
+
+g++ -std=c++17 -O2 -Wall -Wextra \
+    ST7735/st7735_demo.cpp \
+    ST7735/st7735.cpp \
+    GPIOManager/GPIOManager.cpp \
+    -o st7735_demo -lgpiod
+
+echo "Built ./st7735_demo"
